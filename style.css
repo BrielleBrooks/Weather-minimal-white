@@ -17,7 +17,7 @@ body {
   background-color: #ffffff; /* changed from #262626 */
   border-radius: 0.7rem;
   padding: 1.5rem;
-  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); /* softer shadow for white theme */
+  box-shadow: none;
   width: 100%;
   max-width: 400px;
   height: auto;
