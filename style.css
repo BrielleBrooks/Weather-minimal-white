@@ -1,0 +1,210 @@
+
+/* 🌍 Global Reset + Scaling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+  color: #191919; /* changed from white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* 📦 Widget Container */
+.widget-card {
+  background-color: #ffffff; /* changed from #262626 */
+  border-radius: 0.7rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); /* softer shadow for white theme */
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  box-sizing: border-box;
+  position: relative;
+  color: #191919; /* dark text */
+}
+
+/* 📌 Widget Header */
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.city-name {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: 600;
+}
+
+.temp {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+}
+
+.description {
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: 400;
+  color: #555555; /* changed from #cccccc */
+}
+
+/* 🌤️ Weather Icon */
+.weather-icon img {
+  width: clamp(3rem, 15vw, 5.6rem);   /* responsive */
+  height: auto;
+  margin-right: clamp(1rem, 5vw, 2.8rem);
+}
+
+/* 🌧 Rain Block */
+.rain-block {
+  background-color: #e4e4e4; /* changed from #111 */
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* lighter shadow for white */
+  color: #191919; /* dark text */
+}
+
+.rain-block img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(8%); /* dark icons */
+}
+
+/* 💧 Humidity + Wind Row */
+/* 💧 Humidity + Wind Row */
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  color: #191919; /* changed from #ddd */
+}
+
+/* 📅 Weekly Forecast */
+.weekly-forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.4rem; /* optional: gives breathing room inside row */
+}
+
+.forecast-day {
+  flex: 1;
+  background-color: #e4e4e4; /* changed from #111 */
+  border-radius: 12px;
+  padding: 0.5rem 0.45rem;
+  text-align: center;
+  font-size: clamp(0.7rem, 1vw, 0.9rem);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15); /* lighter shadow */
+  color: #191919; /* dark text */
+}
+
+.forecast-day img {
+  width: 28px;
+  height: 28px;
+  margin: 0.25rem 0;
+  filter: brightness(0) saturate(100%) invert(8%); /* dark icons */
+}
+
+.forecast-day .temp-low {
+  color: #555; /* softer gray */
+}
+
+.forecast-day .temp-high {
+  color: #141414; /* darker for emphasis */
+  font-weight: 600;
+}
+
+/* ⚙️ Settings Button */
+#settings-button {
+  background: none;
+  border: none;
+  position: absolute;
+  bottom: 0.3rem;  /* 🔥 move to bottom */
+  right: 0.4rem;   /* 🔥 keep on right */
+  cursor: pointer;
+}
+
+#settings-button img {
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(0) saturate(100%) invert(8%); /* dark gear */
+}
+
+/* ⚙️ Settings Modal */
+.settings-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9; /* changed from #2c2c2c */
+  border-radius: 0.625rem;
+  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  z-index: 2000;
+  width: min(90vw, 20rem);
+  box-sizing: border-box;
+  color: #191919; /* dark text */
+}
+
+.settings-modal input[type="text"] {
+  display: block;
+  width: 100%;
+  background-color: #e4e4e4; /* changed from #191919 */
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: #191919; /* dark text */
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); /* lighter shadow */
+  outline: none;
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
+}
+
+.settings-modal select {
+  display: block;
+  width: 100%;
+  background-color: #e4e4e4; /* changed from #191919 */
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: #191919; /* dark text */
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); /* lighter shadow */
+  outline: none;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  padding-right: 2rem;
+}
+
+.settings-modal button {
+  padding: 0.5rem 0.75rem;
+  background-color: #191919; /* changed from white */
+  color: #ffffff; /* changed from #191919 */
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+}
